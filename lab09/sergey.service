@@ -1,0 +1,14 @@
+[Unit]
+Description=Custom PHP Server
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=sergey
+ExecStart=/usr/bin/env php /home/sergey/server.php
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,41 @@
+   65  mkdir test
+   66  cd test
+   67  touch file
+   68  ls -l file
+   71  chmod 000 file
+   72  echo "тест" > file
+   73  cat file
+   74  chmod u+w file && ll file
+   75  cat file
+   76  echo "test" > file
+   77  chmod g+r file && ll file
+   78  cat file
+   79  chmod r+r file && ls -l
+   80  chmod u+r file && ls -l
+   81  cat file
+   82  mkdir new_file
+   83  rm new_file/
+   84  rm new_file
+   85  rmdir new_file
+   86  mkdir dir
+   87  touch dir/new_file && echo "file 2" > dir/new_file
+   88  ls -l dir
+   89  chmod u-x dir
+   90  cat dir/new_file 
+   91  rm dir/new_file 
+   92  chown root file
+   93  chgrp root file
+   97  umask 0000 && touch file1 && ll file1
+  104  umask 0000 && touch file2 && ll file2
+  106  sudo chown root file
+  107  cat file
+  113  sudo ls -lR
+========================================================================
+        drw-rwxr-x. 2 sergey sergey 22 дек 25 07:55 dir
+        -rw-r-----. 1 root   sergey  0 дек 25 08:04 file
+        -rw-------. 1 sergey sergey  0 дек 25 08:10 file1
+        -rw-rw-rw-. 1 sergey sergey  0 дек 25 08:09 file2
+
+        ./dir:
+        total 4
+        -rw-rw-r--. 1 sergey sergey 7 дек 25 07:55 new_file
