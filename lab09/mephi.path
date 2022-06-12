@@ -1,0 +1,8 @@
+[Unit]
+Description="Check for MEPhI file in /tmp"
+After=sshd.service
+[Path]
+PathExists=/tmp/mephi.txt
+Unit=mephi.service
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,77 @@
+    1  ps xaf
+    2  ps xawf -eo pid,user,cgroup,args
+    3  systemd-cgls
+    4  ls -l /usr/lib/systemd/system/
+    5  ls -l /run/systemd/system/
+    6  ls -l /etc/systemd/system/
+    7  systemctl -t help
+    8  systemctl status
+    9  systemctl --type=service
+   10  systemctl status auditd.service
+   11  systemctl status firewalld.service
+   12  systemctl is-active auditd.service
+   13  systemctl is-enabled auditd.service
+   14  systemctl list-dependencies --after auditd.service
+   15  systemctl list-dependencies --before auditd.service
+   16  systemctl list-units --type=service
+   17  systemctl list-units --type=service --all
+   18  systemctl list-units --type=socket --all
+   19  systemctl list-unit-files --type=service
+   20  systemctl list-unit-files --type=service --all
+   21  systemctl list-unit-files --type=socket --all
+   22  systemctl --failed --type=service
+   23  systemctl status httpd.service
+   24  systemctl start httpd.service
+   25  systemctl status httpd.service
+   26  systemctl restart httpd.service
+   27  systemctl status httpd.service
+   28  systemctl stop httpd.service
+   29  systemctl enable httpd.service
+   30  systemctl status httpd.service
+   31  systemctl start httpd.service
+   32  systemctl status httpd.service
+   33  systemctl disable httpd.service
+   34  systemctl mask httpd.service
+   35  systemctl status httpd.service
+   36  systemctl start httpd.service
+   37  systemctl unmask httpd.service
+   38  systemctl list-units --type=target
+   39  systemctl list-units --type=target --all
+   40  systemctl get-default
+   41  ls -l /etc/systemd/system/default.target
+   72  systemctl set-default multi-user.target
+   73  systemctl isolate multi-user.target
+   74  ls -l /etc/systemd/system/default.target
+   75  systemctl set-default graphical.target
+   76  systemctl --no-wall rescue
+   77  systemctl --no-wall emergency
+   78  systemctl poweroff
+   79  systemctl halt
+   80  systemctl --no-wall poweroff
+   81  shutdown --poweroff 23:00
+   82  shutdown --halt +2
+   83  shutdown -c
+   84  systemctl --no-wall reboot
+   85  systemctl suspend
+   86  systemctl hibernate
+   87  man hostnamectl
+   88  man timedatectl
+   89  man localectl
+   90  man loginctl
+   91  man loginctl
+   92  loginctl session-status 2
+   93  loginctl show-user smisshin
+   94  ls -l /etc/systemd/system
+  109  vi mephi.service
+  110  ls -lZ mephi.service
+  113  sudo cp mephi.service /etc/systemd/system && systemctl start mephi.service
+  114  systemctl status mephi.service
+  115  systemctl start mephi.service
+  116  systemctl status mephi.service
+  117  vi mephi.service
+  121  journalctl -u mephi
+  127  vi mephi.path
+  131  sudo cp mephi.path /etc/systemd/system && systemctl start mephi.path 
+  134  touch /tmp/mephi.txt
+  135  journalctl -u mephi
+  144  history > history.txt
